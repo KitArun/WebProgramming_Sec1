@@ -7,10 +7,10 @@
 <body>
     <?php
     // Get form values
-    $number1 = isset($_GET['number1']) ? $_GET['number1'] : 0;
-    $number2 = isset($_GET['number2']) ? $_GET['number2'] : 0;
-    $operator = isset($_GET['operator']) ? $_GET['operator'] : '';
-
+    $number1 = isset($_POST['number1']) ? $_POST['number1'] : 0;
+    $number2 = isset($_POST['number2']) ? $_POST['number2'] : 0;
+    $operator = isset($_POST['operator']) ? $_POST['operator'] : '';
+    
     // Display the input values
     echo "<p>";
     echo "<b>ข้อมูลผู้ใช้ใส่มา </b><br />";
@@ -43,18 +43,9 @@
     }
 
     echo " </i> <br/>";
-    ?>
-    <tr>
-        <td colspan="1" align="center">
-            <!--กลับแบบไปลิ้งก่อนหน้า -->
-            <!--a href="javascript:history.back()">Back</a>
 
-                <!-- กลับแบบเลือก -->
-            <!--form action="Lab5-9.php"-->
-                <input type="submit" value="Back" onclick="javascript:history.back()">
-        </td>
-    </tr>
-    </table>
+    echo '<form action="javascript:history.back()"><input type="submit" value="Back"></form>';
+    ?>
 </body>
 
 </html>
