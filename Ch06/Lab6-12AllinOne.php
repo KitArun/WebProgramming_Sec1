@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET['submit'])) {
+if (isset($_POST['submit'])) {
     $row = $_POST['row'];
     $column = $_POST['column'];
     $rowMax = intval($row);
@@ -29,7 +29,7 @@ if (isset($_GET['submit'])) {
     </head>
 
     <body>
-        <form method="post" action="lab6-12cal.php">
+        <form method="post" action="lab6-12AllinOne.php">
             <table border="1" align="center" width="400">
                 <tr>
                     <td colspan="2" align="center">
@@ -45,15 +45,13 @@ if (isset($_GET['submit'])) {
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                    <input type="submit" name="submit" value=" OK " />
-                    <input type="reset" name="reset" value=" Clear " />
+                        <input type="submit" name="submit" value=" OK " />
+                        <input type="reset" name="reset" value=" Clear " />
                     </td>
                 </tr>
             </table>
         </form>
     </body>
-
-    </html>
 
     </html>
     <?php

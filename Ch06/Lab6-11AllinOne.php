@@ -5,12 +5,9 @@ if (isset($_GET['submit'])) {
     $midterm = $_GET['midterm'];
     $final = $_GET['final'];
     
-    if ($hw > 30)
-        $hw = 30;
-    if ($midterm > 35)
-        $midterm = 35;
-    if ($final > 35)
-        $final = 35;
+    if ($hw > 30) { echo "คะแนนต้องไม่เกิน30"; exit;};
+    if ($midterm > 35) { echo "คะแนนต้องไม่เกิน30"; exit;};
+    if ($final > 35) { echo "คะแนนต้องไม่เกิน30"; exit;};
 
     echo "<p>";
     echo "<b>ข้อมูลคะแนน </b><br />";
@@ -60,13 +57,13 @@ if (isset($_GET['submit'])) {
                 <tr>
                 <tr>
                     <td>Enter Home work : </td> 
-                    <td><input type="number" name="hw" size="15" min="0" max="30" value="" /> </td>
+                    <td><input type="number" name="hw" size="15" min="0" max="31" value="" /> </td>
                 </tr>
                 <td>Enter Midterm : </td>
-                <td><input type="number" name="midterm" size="15" min="0" max="35" value="" /></td>
+                <td><input type="number" name="midterm" size="15" min="0" max="36" value="" /></td>
                 </tr>
                 <td>Enter final : </td>
-                <td><input type="number" name="final" size="15"  min="0" max="35" value="" /></td>
+                <td><input type="number" name="final" size="15"  min="0" max="36" value="" /></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
