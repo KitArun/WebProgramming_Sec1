@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <?
+    <?php
     $weekdays = array(
         "sun" => "อาทิตย์",
         "mon" => "จันทร์",

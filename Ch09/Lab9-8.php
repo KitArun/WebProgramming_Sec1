@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <?
+    <?php
     $products = array(
         "T0001" => array("name" => "บล็อดหยอดหมีพูห์", "price" => 599),
         "T0004" => array("name" => "ตุ๊กตากบ สอน ABC", "price" => 2400),

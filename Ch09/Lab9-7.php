@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <?
+    <?php
     $maxRow = 10;
     $maxCol = 3;
     for ($r = 0; $r < $maxRow; $r++) {

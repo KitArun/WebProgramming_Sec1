@@ -1,4 +1,4 @@
-<?
+<?php
 // declare function page_header
 function page_header() {
 echo '<html><head><title>ยินดีต้อนรับทุกท่าน</title><head>';

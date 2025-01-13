@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <?
+    <?php
     $letters[0] = 'A';
     $letters[1] = 'B';
     $letters[2] = 'C';

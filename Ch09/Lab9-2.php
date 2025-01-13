@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <?
+    <?php
     $MaxStudent = 10;
     for ($n = 0; $n < $MaxStudent; $n++) {
         $score[$n] = rand(0, 100);

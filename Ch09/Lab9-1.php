@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <?
+    <?php
     $weekdays = array("อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์");
     echo '<center><font size="4" color="blue">กุมภาพันธ์ ๒๕๕๔</font>';
     echo '<font size="5" color="red"> ๒ </font>';

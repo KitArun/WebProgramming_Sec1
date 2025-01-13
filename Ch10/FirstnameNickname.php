@@ -2,54 +2,57 @@
 if (isset($_POST['submit'])) {
     $filename = $_POST['filename'];
     $text = file($filename);
+    echo "<table border='1' cellpadding='10' cellspacing='2'>"; // Start the table
+    echo "<tr><th>No.</th><th>Original Name</th><th>Updated Name</th></tr>"; // Table headers
+    
     foreach ($text as $tr_data) {
 
         $column = 1;
         $array_word = explode(',', $tr_data);
 
+        echo "<tr>"; // Start a new table row
+
         foreach ($array_word as $key => $value) {
             $value = trim($value);
             if ($column == 1) {
-                echo $value;
+                echo "<td>" . htmlspecialchars($value) . "</td>"; // Display original name in the first column
             }
             else {
-                if ($value == 'Robert') echo 'Dick <br>';
-                elseif ($value == 'Dick') echo 'Dick<br>';
+                $updated_name = ''; // Variable to store the updated name
 
-                if ($value == 'William') echo 'Bill<br>';
-                elseif ($value == 'Bill') echo 'William<br>';
+                // Mapping and updating names
+                if ($value == 'Robert') $updated_name = 'Dick';
+                elseif ($value == 'Dick') $updated_name = 'Dick';
+                elseif ($value == 'William') $updated_name = 'Bill';
+                elseif ($value == 'Bill') $updated_name = 'William';
+                elseif ($value == 'Janes') $updated_name = 'Jim';
+                elseif ($value == 'Jim') $updated_name = 'James';
+                elseif ($value == 'John') $updated_name = 'Jack';
+                elseif ($value == 'Jack') $updated_name = 'John';
+                elseif ($value == 'Margaret') $updated_name = 'Peggy';
+                elseif ($value == 'Peggy') $updated_name = 'Margaret';
+                elseif ($value == 'Edward') $updated_name = 'Ed';
+                elseif ($value == 'Ed') $updated_name = 'Edward';
+                elseif ($value == 'Sarah') $updated_name = 'Sally';
+                elseif ($value == 'Sally') $updated_name = 'Sarah';
+                elseif ($value == 'Andrew') $updated_name = 'Andy';
+                elseif ($value == 'Andy') $updated_name = 'Andrew';
+                elseif ($value == 'Anthony') $updated_name = 'Tony';
+                elseif ($value == 'Tony') $updated_name = 'Anthony';
+                elseif ($value == 'Deborah') $updated_name = 'Debbie';
+                elseif ($value == 'Debbie') $updated_name = 'Deborah';
 
-                if ($value == 'James') echo 'Jim<br>';
-                elseif ($value == 'Jim') echo 'James<br>';
-
-                if ($value == 'John') echo 'Jack<br>';
-                elseif ($value == 'Jack') echo 'John<br>';
-
-                if ($value == 'Margaret') echo 'Peggy<br>';
-                elseif ($value == 'Peggy') echo 'Margaret<br>';
-
-                if ($value == 'Edward') echo 'Ed<br>';
-                elseif ($value == 'Ed') echo 'Edward<br>';
-                
-                if ($value == 'Sarah') echo 'Sally<br>';
-                elseif ($value == 'Sally') echo 'Sarah<br>';
-
-                if ($value == 'Andrew') echo 'Andy<br>';
-                elseif ($value == 'Andy') echo 'Andrew<br>';
-
-                if ($value == 'Anthony') echo 'Tony<br>';
-                elseif ($value == 'Tony') echo 'Anthony<br>';
-
-                if ($value == 'Deborah') echo 'Debbie<br>';
-                elseif ($value == 'Debbie') echo 'Deborah<br>';
-    
+                // If the updated name exists, display it
+                echo "<td>" . htmlspecialchars($value) . "</td>";
+                echo "<td>" . htmlspecialchars($updated_name) . "</td>";
             }
             $column++;
         }
-
+        echo "</tr>"; // End the table row
     }
-
-} else { ?>
+    echo "</table>"; // End the table
+}
+else { ?>
     <!DOCTYPE html>
     <html>
 
@@ -82,6 +85,6 @@ if (isset($_POST['submit'])) {
     </body>
 
     </html>
-    <?php
+<?php
 }
 ?>

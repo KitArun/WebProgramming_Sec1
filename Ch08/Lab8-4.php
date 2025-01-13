@@ -1,4 +1,4 @@
-<?
+<?php
 // declare function page_header with argument and defualt value
 function page_header($title, $bgcolor = "ffffff") {
 echo '<html><head><title>' . $title . '</title><head>';
