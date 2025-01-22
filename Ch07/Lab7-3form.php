@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <form method="get" action="lab7-2cal.php">
+    <form method="get" action="lab7-3cal.php">
         <table border="1" align="center" width="500">
             <tr>
                 <td colspan="2" align="center">

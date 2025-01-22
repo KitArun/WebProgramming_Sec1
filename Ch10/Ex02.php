@@ -1,9 +1,7 @@
 <html>
-
 <head>
     <title>แสดงการฟังก์ชั่น fopen และ fgetc</title>
 </head>
-
 <body>
     <?php
     // open file
@@ -32,5 +30,4 @@
     }
     ?>
 </body>
-
 </html>

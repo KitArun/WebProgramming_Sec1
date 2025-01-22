@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <?
+    <?php
     echo "<h3>";
     if (
         isset($_GET['day']) && isset($_GET['month']) &&
@@ -26,7 +26,7 @@
     echo "<hr />";
     echo "วันนี้ วันที่ " . date("d-M-Y") . ", เวลา : " . date("H:i:s") . "<br>";
     echo "<hr /><br>";
-    echo "<ul>แสดงตัวอย่างการก าหนดรูปแบบของ date";
+    echo "<ul>แสดงตัวอย่างการกำหนดรูปแบบของ date";
     echo "<li>บรรทัด 1: " . date("F j, Y, g:i a");
     echo "<li>บรรทัด 2: " . date("วันที่ j เดือน F ปี ค.ศ. Y, เวลา G.i น.") . "<br>";
     echo "<li>บรรทัด 3: " . date("m.d.y") . "<br>";

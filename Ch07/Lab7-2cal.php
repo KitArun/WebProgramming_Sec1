@@ -1,29 +1,43 @@
 <html>
 
 <head>
-    <title>แสดงการใช้ variable function </title>
+    <title>แสดงการใช้ฟังก์ชั่น variable </title>
 </head>
 
 <body>
-    <form method="get" action="lab7-2cal.php">
-        <table border="1" align="center" width="500">
-            <tr>
-                <td colspan="2" align="center">
-                    <big>การใช้ฟังก์ชั่นเกี่ยวกับตัวแปร </big>
-                </td>
-            </tr>
-            <tr>
-                <td> ใส่ข้อมูล : </td>
-                <td><input type="text" name="data" size="20" value="" /> </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" value=" OK " />
-                    <input type="reset" value=" Clear " />
-                </td>
-            </tr>
-        </table>
-    </form>
+    <?php
+    echo "<h3>";
+    if (isset($_GET['data'])) {
+        $data = $_GET['data'];
+        echo "ตัวแปร data : ";
+        if (empty($data))
+            echo " ไม่มีค่า ";
+        else
+            echo "มีค่า $data";
+        echo "<br>";
+        echo "ตัวแปร data : Type " . getType($data) . "<br>";
+        echo "ตัวแปร data : ";
+        if (is_string($data))
+            echo " is string";
+        else
+            echo " is numeric";
+        echo "<br>";
+        // case int
+        $intdata = intval($data);
+        echo "ตัวแปร intdata value $intdata : ";
+        if (is_int($intdata))
+            echo " is integer";
+        echo "<br>";
+        // case float
+        $floatdata = floatval($data);
+        echo "ตัวแปร floatdata value $floatdata : ";
+        if (is_float($floatdata))
+            echo " is float";
+    } else {
+        echo "ไม่ได้ประกาศตัวแปร data ";
+    }
+    echo "</h3>";
+    ?>
 </body>
 
 </html>

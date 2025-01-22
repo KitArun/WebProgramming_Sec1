@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <?
+    <?php
     echo "<h3>";
     if (isset($_GET['data']) && isset($_GET['ch'])) {
         $data = $_GET['data'];

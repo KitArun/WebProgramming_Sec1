@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <?
+    <?php
     echo "<h3>";
     if (
         isset($_GET['number1']) && isset($_GET['number2']) &&
