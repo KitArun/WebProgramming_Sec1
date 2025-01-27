@@ -6,9 +6,9 @@
 
 <body>
     <?php
-    $MaxStudent = 10;
+    $MaxStudent = 20;
     for ($n = 0; $n < $MaxStudent; $n++) {
-        $score[$n] = rand(0, 100);
+        $score[$n] = rand(0, 35);
     }
     echo '<center><font size="4" color="blue"> Grade Report </font></center>';
     echo '<table border="1" align="center">';
