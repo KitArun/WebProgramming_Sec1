@@ -11,15 +11,13 @@
     $password = "";
     $dbName = "bookStore";
     $conn = mysqli_connect($hostname, $username, $password);
-    if (!$conn)
+    if (!$conn) 
         die("ไม่สามารถติดต่อกับ MySQL ได้");
-    mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือกฐานข้อมูล bookStore
-
-ได้");
-
+    mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือกฐานข้อมูล bookStore ได้");
     mysqli_query($conn, "set character_set_connection=utf8mb4");
     mysqli_query($conn, "set character_set_client=utf8mb4");
     mysqli_query($conn, "set character_set_results=utf8mb4");
+
     $sql = "select * from book order by bookId";
     $result = mysqli_query($conn, $sql);
     echo '<center>';
@@ -41,9 +39,7 @@
     while ($rs = mysqli_fetch_array($result)) {
         echo '<tr align="center" bgcolor="">';
         echo '<td>' . $row . '</td>';
-        echo '<td><a
-
-href="bookDetail1_edit.php?bookId=' . $rs[0] . '">' . $rs[0] . '</a></td>';
+        echo '<td><a href="bookDetail.php?bookId=' . $rs[0] . '">' . $rs[0] . '</a></td>';
         echo '<td align="left">' . $rs[1] . '</td>';
         echo '<td><a href="bookUpdate1.php?bookId=' . $rs[0] . '">[แก้ไข]
 

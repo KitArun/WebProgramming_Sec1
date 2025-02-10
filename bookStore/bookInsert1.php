@@ -2,25 +2,25 @@
 function getTypeSelect()
 {
     global $conn;
-    $sql = "select * from bookType order by typeId";
+    $sql = "select * from typebook order by typeId";
     $dbQuery = mysqli_query($conn, $sql);
     if (!$dbQuery)
-        die("(functionDB:getTypeSelect) select bookType มีข้อผิดพลาด" . mysqli_error());
+        die("(functionDB:getTypeSelect) select bookType มีข้อผิดพลาด" . mysqli_error($conn));
     echo '<option value="">เลือกประเภทหนังสือ</option>';
-    while ($result = mysqli_fetch_object($dbQuery)) {
-        echo '<option value=' . $result->typeId . '>' . $result->typeName . '</option>';
+    while ($result = mysqli_fetch_object(result: $dbQuery)) {
+        echo '<option value=' . $result->TypeID . '>' . $result->TypeName . '</option>';
     }
 }
 function getStatusSelect()
 {
     global $conn;
-    $sql = "select * from bookstatus order by statusId";
+    $sql = "select * from statusbook order by statusId";
     $dbQuery = mysqli_query($conn, $sql);
     if (!$dbQuery)
-        die("(functionDB:getStatusSelect) select status มีข้อผิดพลาด" . mysqli_error());
+        die("(functionDB:getStatusSelect) select status มีข้อผิดพลาด" . mysqli_error($conn));
     echo '<option value="">เลือกสถานะ</option>';
     while ($result = mysqli_fetch_object($dbQuery)) {
-        echo '<option value=' . $result->statusId . '>' . $result->statusName . '</option>';
+        echo '<option value=' . $result->StatusID . '>' . $result->StatusName . '</option>';
     }
 }
 $hostname = "localhost";
@@ -63,7 +63,6 @@ mysqli_query($conn, "set character_set_results=utf8mb4");
                     <td width="200">ประเภทหนังสือ : </td>
                     <td><select name="typeId">
                             <?php getTypeSelect();
-
                             ?>
                         </select></td>
 
@@ -72,13 +71,12 @@ mysqli_query($conn, "set character_set_results=utf8mb4");
                     <td width="200">สถานะหนังสือ : </td>
                     <td><select name="statusId">
                             <?php getStatusSelect();
-
                             ?>
                         </select></td>
 
                 </tr>
                 <tr>
-                    <td width="200">ส านักพิมพ์ : </td>
+                    <td width="200">สำนักพิมพ์ : </td>
                     <td><input type="text" name="publish" maxlength="25" size="20"></td>
 
                 </tr>
@@ -93,7 +91,7 @@ mysqli_query($conn, "set character_set_results=utf8mb4");
 
                 </tr>
                 <tr>
-                    <td width="200">จ านวนวันที่เช่า : </td>
+                    <td width="200">จำนวนวันที่เช่า : </td>
                     <td><input type="text" name="dayAmount" maxlength="25" size="20"></td>
 
                 </tr>

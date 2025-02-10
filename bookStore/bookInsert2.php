@@ -7,7 +7,6 @@ $publish = $_POST['publish'];
 $unitPrice = $_POST['unitPrice'];
 $unitRent = $_POST['unitRent'];
 $dayAmount = $_POST['dayAmount'];
-$oldImageFile = @$_POST['oldImageFile'];
 $imageFileName = @$_FILES['imageFile']['name'];
 $imageFileType = @$_FILES['imageFile']['type'];
 $imageFileSize = @$_FILES['imageFile']['size'];
@@ -29,15 +28,14 @@ mysqli_query($conn, "set character_set_results=utf8mb4");
 if ($_FILES['imageFile']['name'] == "") {
     echo '<b><li>คุณไม่ได้เลือกรูปภาพ</li></b><br>';
 } else {
-    move_uploaded_file($_FILES["imageFile"]["tmp_name"], "pictures/" . $_FILES["imageFile"]["na
-me"]);
+    move_uploaded_file($_FILES["imageFile"]["tmp_name"], "pictures/" . $_FILES["imageFile"]["name"]);
 
     $picture = $_FILES['imageFile']['name'];
 }
-$sql = "insert into book(bookId, bookName, typeId, statusId, publish, unitPrice, unitRent,
-dayAmount, picture, bookDate) values ('$bookId', '$bookName', '$typeId', '$statusId', '$publish',
+$sql = "insert into book(BookID, BookName, TypeID, StatusId, Publish, UnitPrice, UnitRent,
+DayAmount, Picture, BookDate) values ('$bookId', '$bookName', '$typeId', '$statusId', '$publish',
 '$unitPrice', '$unitRent', '$dayAmount', '$picture', '$bookDate')";
-mysqli_query($conn, $sql) or die("insert ลงตาราง book มีข้อผิดพลาดเกิดขึ้น" . mysqli_error());
+mysqli_query($conn, $sql) or die("insert ลงตาราง book มีข้อผิดพลาดเกิดขึ้น" . mysqli_error($conn));
 echo '<br><br><h2>บันทึกข้อมูลหนังสือรหัส ' . $bookId . ' เรียบร้อย</h2>';
 echo '<br><br><a href="bookList1.php">กลับหน้า bookList1.php</a>';
 mysqli_close($conn);
