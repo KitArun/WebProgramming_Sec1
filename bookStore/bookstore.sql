@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2025 at 07:56 AM
+-- Generation Time: Mar 18, 2025 at 12:41 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,11 +45,32 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`BookID`, `BookName`, `TypeID`, `StatusID`, `Publish`, `UnitPrice`, `UnitRent`, `DayAmount`, `Picture`, `BookDate`) VALUES
-('00001', 'Doraemon', '001', '01', 'Kpn', 150, 3, 2, '-', '2554-02-01'),
+('00001', 'Doramon', '001', '01', 'Kpn', 150, 3, 2, '-', '2554-02-01'),
 ('00002', 'เก็บตะวัน', '002', '03', 'WRP', 250, 5, 3, '-', '2554-03-20'),
 ('00003', 'สิ่งมีชีวิต', '002', '01', 'YPR', 185, 3, 3, '-', '2553-03-25'),
 ('00004', 'คู่สร้างคู่สม', '003', '01', 'DDR', 20, 1, 2, '-', '2552-01-15'),
 ('00005', 'Konan', '001', '02', 'Kpn', 80, 2, 2, '-', '2554-04-08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `username` varchar(8) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `userId` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`username`, `password`, `status`, `userId`) VALUES
+('Gojo007', 'Satoru', '', ''),
+('lnwza007', 'Jame', '', '');
 
 -- --------------------------------------------------------
 
@@ -102,6 +123,12 @@ ALTER TABLE `book`
   ADD PRIMARY KEY (`BookID`),
   ADD KEY `TypeID` (`TypeID`),
   ADD KEY `StatusID` (`StatusID`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `statusbook`
